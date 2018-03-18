@@ -2,7 +2,9 @@
 //
 class CScanner
 {
-    private:
-        CKassa *kassa;
+public:
+	bool ScanProduct();
+private:
+	CKassa *kassa;
 
 };
