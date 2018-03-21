@@ -9,6 +9,7 @@ protected:
 public:
 	GemueseObst();
 	~GemueseObst();
+	virtual CProdukt* clone() const { return new GemueseObst(*this); }
 	GemueseObst(const char * nBeschreibung, const char * nDatum, unsigned int nPreis, const char * nName, unsigned short int nKategorie);
 	GemueseObst(const GemueseObst & original);
 	GemueseObst & operator=(const GemueseObst & original);

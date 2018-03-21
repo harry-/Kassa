@@ -19,7 +19,7 @@ CGetraenk::CGetraenk(const char * nBeschreibung, const char * nDatum, const unsi
 	setAlkoholgehalt(nAlkoholgehalt);
 }
 
-CGetraenk::CGetraenk(CGetraenk & original) : CProdukt(original)
+CGetraenk::CGetraenk(const CGetraenk & original) : CProdukt(original)
 {
 	set_Name(original.Name);
 	setKategorie(original.Kategorie);

@@ -28,28 +28,31 @@ int CKassa::Berechnen(CProdukt * product)
 		price += price*0.25;
 
 	}
-	std::clog << typeid(*product).name();
+	//std::clog << typeid(*product).name();
 
-	if (!strcmp(typeid(*product).name(), "class CFleisch"))
-	{
-		std::clog << "Fleisch!\n";
-		products[productCount] = new CFleisch();
+	//if (!strcmp(typeid(*product).name(), "class CFleisch"))
+	//{
+	//	std::clog << "Fleisch!\n";
+	//	products[productCount] = new CFleisch();
 
-	}
-	else if (!strcmp(typeid(*product).name(), "class CGetraenk"))
-	{
-		std::clog << "Trinken!\n";
-		products[productCount] = new CGetraenk();
+	//}
+	//else if (!strcmp(typeid(*product).name(), "class CGetraenk"))
+	//{
+	//	std::clog << "Trinken!\n";
+	//	products[productCount] = new CGetraenk();
 
-	}
-	else if (!strcmp(typeid(*product).name(), "class GemueseObst"))
-	{
-		std::clog << "Obst!\n";
-		products[productCount] = new GemueseObst();
-	}
+	//}
+	//else if (!strcmp(typeid(*product).name(), "class GemueseObst"))
+	//{
+	//	std::clog << "Obst!\n";
+	//	products[productCount] = new GemueseObst();
+	//}
 	
-	*products[productCount] = *product;
-	products[productCount]->set_Name(product->get_Name());
+	//*products[productCount] = *product;
+	//products[productCount]->set_Name(product->get_Name());
+
+
+	products[productCount] = product->clone();
 	products[productCount]->set_Preis(price);
 	productCount++;
 

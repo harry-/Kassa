@@ -10,6 +10,7 @@ protected:
 public:
 	CProdukt();
 	virtual ~CProdukt();
+	virtual CProdukt* clone() const = 0;
 	CProdukt(const char * nBeschreibung, const char * nDatum, const unsigned int nPreis);
 	CProdukt(const CProdukt & original);
 	CProdukt & operator=(const CProdukt & original);

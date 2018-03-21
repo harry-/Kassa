@@ -11,6 +11,8 @@ public:
 	~CFleisch();
 	CFleisch(const char * nBeschreibung, const char * nDatum, unsigned int nPreis, const char * nName, unsigned short int nKategorie );
 	CFleisch(const CFleisch & original);
+	
+	virtual CProdukt* clone() const { return new CFleisch(*this); }
 
 	CFleisch & operator=(const CFleisch & original);
 

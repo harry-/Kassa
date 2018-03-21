@@ -11,8 +11,9 @@ public:
 	void display();
 	CGetraenk();
 	~CGetraenk();
+	virtual CProdukt* clone() const { return new CGetraenk(*this); }
 	CGetraenk(const char * nBeschreibung, const char * nDatum, const unsigned int nPreis, const char* nName, const unsigned short nKategorie, const unsigned short nAlkoholgehalt);
-	CGetraenk(CGetraenk & original);
+	CGetraenk(const CGetraenk & original);
 	CGetraenk(CGetraenk && original);
 	CGetraenk & operator=(CGetraenk & original);
 	CGetraenk & operator=(CGetraenk && original);
