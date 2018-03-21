@@ -1,10 +1,13 @@
 ﻿#include "CKassa.h"
+#include "CProdukt.h"
 //
 class CScanner
 {
 public:
-	bool ScanProduct();
+	CScanner() {};
+	CScanner(CKassa * kassa);
+	bool ScanProduct(CProdukt * product);
+
 private:
 	CKassa *kassa;
-
 };

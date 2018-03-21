@@ -4,7 +4,7 @@ class CGetraenk : public CProdukt
 {
 protected:
 	char* Name{ nullptr };
-	char Kategorie{ 0 };
+	unsigned short Kategorie{ 0 };
 	short unsigned Alkoholgehalt{ 0 };
 
 public:
@@ -16,8 +16,8 @@ public:
 	CGetraenk(CGetraenk && original);
 	CGetraenk & operator=(CGetraenk & original);
 	CGetraenk & operator=(CGetraenk && original);
-	bool setName(const char * nName);
-	bool setKategorie(const char nKategorie);
+	bool set_Name(const char * nName);
+	bool setKategorie(const unsigned short nKategorie);
 	bool setAlkoholgehalt(const unsigned short nAlkoholgehalt);
 	char * get_Name();
 };

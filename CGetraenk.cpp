@@ -14,14 +14,14 @@ CGetraenk::~CGetraenk()
 CGetraenk::CGetraenk(const char * nBeschreibung, const char * nDatum, const unsigned int nPreis, const char * nName, const unsigned short nKategorie, const unsigned short nAlkoholgehalt) 
 	:CProdukt(nBeschreibung, nDatum, nPreis)
 {
-	setName(nName);
+	set_Name(nName);
 	setKategorie(nKategorie);
 	setAlkoholgehalt(nAlkoholgehalt);
 }
 
 CGetraenk::CGetraenk(CGetraenk & original) : CProdukt(original)
 {
-	setName(original.Name);
+	set_Name(original.Name);
 	setKategorie(original.Kategorie);
 	setAlkoholgehalt(original.Alkoholgehalt);
 }
@@ -39,7 +39,7 @@ CGetraenk::CGetraenk(CGetraenk && original)
 CGetraenk & CGetraenk::operator=(CGetraenk & original)
 {
 	CProdukt::operator=(original);
-	setName(original.Name);
+	set_Name(original.Name);
 	setKategorie(original.Kategorie);
 	setAlkoholgehalt(original.Alkoholgehalt);
 	return *this;
@@ -57,7 +57,7 @@ CGetraenk & CGetraenk::operator=(CGetraenk && original)
 	return *this;
 }
 
-bool CGetraenk::setName(const char * nName)
+bool CGetraenk::set_Name(const char * nName)
 {
 	if (!nName)
 		return false;
@@ -80,7 +80,7 @@ bool CGetraenk::setName(const char * nName)
 	}
 }
 
-bool CGetraenk::setKategorie(const char nKategorie)
+bool CGetraenk::setKategorie(const unsigned short nKategorie)
 {
 	Kategorie = nKategorie;
 	return true;
