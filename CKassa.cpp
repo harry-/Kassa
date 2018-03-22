@@ -71,15 +71,15 @@ void CKassa::Display()
 		items[products[i]->get_Name()]++;
 	}
 
-	const short  unsigned poswidth{ 20 };
+	const short  unsigned poswidth{ 50 };
 	const short unsigned countwidth{ 20 };
 	const short unsigned pricewidth{ 20 };
 
 	clear();
-	std::cout << std::setw(poswidth) << "Position" << std::setw(countwidth) << "Stk." << std::setw(pricewidth) << "Preis\n";
+	std::cout << std::fixed << std::setprecision(2) << std::setw(poswidth) << "Position" << std::setw(countwidth) << "Stk." << std::setw(pricewidth) << "Preis" << '\n';
 	for (auto it = pos.begin(); it != pos.end(); it++)
 	{
-		std::cout << std::setw(poswidth) << it->first << std::setw(countwidth) << items[it->first] << std::setw(pricewidth) << it->second / (float)100 << '\n';
+		std::cout << std::setw(poswidth) << it->first << std::setw(countwidth) << items[it->first] << std::setfill('.') <<std::setw(pricewidth) << it->second / (float)100 << std::setfill(' ') <<'\n';
 	}
 	std::cout << std::setw(poswidth) << "Rechnungsbetrag" << std::setw(countwidth)<< ' ' << std::setw(pricewidth) << Rechnung / (float)100 << '\n';
 }

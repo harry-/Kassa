@@ -11,9 +11,10 @@ void clear() {
 	FillConsoleOutputCharacterA(
 		console, ' ', screen.dwSize.X * screen.dwSize.Y, topLeft, &written
 	);
-	FillConsoleOutputAttribute(
-		console, FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_BLUE,
-		screen.dwSize.X * screen.dwSize.Y, topLeft, &written
-	);
+	//FillConsoleOutputAttribute(
+	//	console,  FOREGROUND_RED | FOREGROUND_INTENSITY,
+	//	screen.dwSize.X * screen.dwSize.Y, topLeft, &written
+	//);
 	SetConsoleCursorPosition(console, topLeft);
+	std::cout << '\n';
 }
